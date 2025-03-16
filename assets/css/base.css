@@ -1,0 +1,224 @@
+/* Base CSS styles for cross-browser compatibility */
+
+/* CSS Reset */
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, code, em, img, small, strike, strong, sub, sup, 
+b, u, i, ol, ul, li, fieldset, form, label, table, 
+caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, footer, header, nav, 
+section, time, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* Main styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  color: #f0e7d5;
+  background-color: #252525;
+  line-height: 1.6;
+  padding: 0;
+  margin: 0;
+}
+
+/* Layout */
+.page-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 1em 0 0.5em;
+  font-weight: bold;
+  color: #e8e8e8;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2em;
+  color: #ffcc00;
+  margin-top: 0.5em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+a {
+  color: #ffcc00;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover, a:focus {
+  color: #ffeb9b;
+  text-decoration: underline;
+}
+
+/* Header */
+#header {
+  background-color: #111;
+  border-bottom: 4px solid #2c2c2c;
+  width: 100%;
+  padding: 10px 0;
+}
+
+#header nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#header nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+#header nav ul li {
+  margin: 0 10px;
+}
+
+#header nav ul li a {
+  color: #bbbbbb;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 12px;
+  display: block;
+}
+
+#header nav ul li a:hover {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.site-title a {
+  color: #ffcc00 !important;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Title section */
+#title {
+  margin-bottom: 30px;
+}
+
+#title h1 {
+  font-size: 32px;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+#title p {
+  color: #d5d5d5;
+  font-size: 16px;
+}
+
+#title hr {
+  border: none;
+  border-top: 1px solid #333;
+  margin: 20px 0;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: #666;
+  padding: 20px 0;
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #header nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #header nav ul li {
+    margin: 5px 0;
+  }
+  
+  h1 {
+    font-size: 1.75em;
+  }
+  
+  h2 {
+    font-size: 1.5em;
+  }
+  
+  h3 {
+    font-size: 1.25em;
+  }
+}
+
+/* Content formatting */
+section {
+  padding: 20px 0;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+code {
+  font-family: monospace;
+  background-color: #333;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: #333;
+  padding: 15px;
+  overflow: auto;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+}
+
+blockquote {
+  border-left: 3px solid #ffcc00;
+  padding-left: 15px;
+  margin-left: 0;
+  margin-right: 0;
+  color: #a3a3a3;
+} 

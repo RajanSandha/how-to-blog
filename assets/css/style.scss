@@ -1,0 +1,29 @@
+@import "jekyll-theme-midnight";
+
+/* Base styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5;
+}
+
+/* Override theme styles */
+#header {
+  background: #111;
+  border-bottom: 4px solid #2c2c2c;
+}
+
+#header nav {
+  background: transparent;
+}
+
+#title h1 {
+  color: #ffcc00;
+}
+
+a {
+  color: #ffcc00;
+}
+
+a:hover {
+  color: #ffeb9b;
+} 

@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.5">Jekyll</generator><link href="https://rajansandha.github.io/how-to-blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://rajansandha.github.io/how-to-blog/" rel="alternate" type="text/html" /><updated>2025-03-16T18:33:20+00:00</updated><id>https://rajansandha.github.io/how-to-blog/feed.xml</id><title type="html">How-To Guide</title><subtitle>Easy-to-follow guides and tutorials for everyday tasks and technical projects</subtitle><entry><title type="html">Getting Started with Jekyll</title><link href="https://rajansandha.github.io/how-to-blog/tutorials/getting-started-with-jekyll/" rel="alternate" type="text/html" title="Getting Started with Jekyll" /><published>2023-07-15T12:00:00+00:00</published><updated>2023-07-15T12:00:00+00:00</updated><id>https://rajansandha.github.io/how-to-blog/tutorials/getting-started-with-jekyll</id><content type="html" xml:base="https://rajansandha.github.io/how-to-blog/tutorials/getting-started-with-jekyll/"><![CDATA[<h1 id="getting-started-with-jekyll">Getting Started with Jekyll</h1>
+
+<p>Jekyll is a fantastic static site generator that makes blogging simple and straightforward. In this post, I’ll walk you through the basics of setting up and using Jekyll for your blog.</p>
+
+<h2 id="what-is-jekyll">What is Jekyll?</h2>
+
+<p>Jekyll is a simple, blog-aware, static site generator. It takes your content, written in Markdown, and transforms it into a static website that can be easily deployed to any web server. Jekyll is the engine behind GitHub Pages, which means you can host your Jekyll site for free on GitHub.</p>
+
+<h2 id="why-use-jekyll">Why Use Jekyll?</h2>
+
+<p>There are several reasons to choose Jekyll for your blog:</p>
+
+<ul>
+  <li><strong>Simplicity</strong>: Jekyll sites are just static files - no database, no security vulnerabilities.</li>
+  <li><strong>Speed</strong>: Because Jekyll generates static files, your site loads very quickly.</li>
+  <li><strong>Version Control</strong>: Your entire blog can be version-controlled with Git.</li>
+  <li><strong>Flexibility</strong>: Jekyll is highly customizable with themes and plugins.</li>
+  <li><strong>Free Hosting</strong>: Jekyll sites can be hosted for free on GitHub Pages.</li>
+</ul>
+
+<h2 id="setting-up-jekyll">Setting Up Jekyll</h2>
+
+<p>Here’s a quick guide to setting up Jekyll:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install Jekyll and Bundler gems</span>
+gem <span class="nb">install </span>jekyll bundler
+
+<span class="c"># Create a new Jekyll site</span>
+jekyll new my-blog
+
+<span class="c"># Change into your new directory</span>
+<span class="nb">cd </span>my-blog
+
+<span class="c"># Build the site and make it available on a local server</span>
+bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+
+<p>After running these commands, your site will be available at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>.</p>
+
+<h2 id="writing-posts">Writing Posts</h2>
+
+<p>Writing posts in Jekyll is easy. All you need to do is create a new file in the <code class="language-plaintext highlighter-rouge">_posts</code> directory with a filename in the format of <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code>. Then, add the front matter at the top of the file:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">My</span><span class="nv"> </span><span class="s">First</span><span class="nv"> </span><span class="s">Post"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2023-07-15</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="s">jekyll</span>
+<span class="nn">---</span>
+
+Your content goes here. You can use <span class="gs">**Markdown**</span> formatting.
+</code></pre></div></div>
+
+<h2 id="using-our-publishing-tools">Using Our Publishing Tools</h2>
+
+<p>This blog comes with a set of useful tools to streamline your publishing workflow:</p>
+
+<ol>
+  <li><strong>Creating New Posts</strong>: Use the <code class="language-plaintext highlighter-rouge">publish_post.rb</code> script to easily create new posts.</li>
+  <li><strong>Image Processing</strong>: Optimize your images with the <code class="language-plaintext highlighter-rouge">process_images.rb</code> script.</li>
+  <li><strong>GitHub Syncing</strong>: Sync your changes to GitHub with the <code class="language-plaintext highlighter-rouge">sync.sh</code> script.</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Jekyll is a powerful tool for bloggers who want a simple, fast, and flexible blogging platform. Give it a try and see how it can transform your blogging experience!</p>
+
+<p>Happy blogging!</p>
+
+<blockquote>
+  <p>This post was created using our custom publishing tools. Check out the README for more information.</p>
+</blockquote>]]></content><author><name>How-To Team</name></author><category term="tutorials" /><summary type="html"><![CDATA[Getting Started with Jekyll]]></summary></entry><entry><title type="html">How to Create Custom Avatars Online: A Comprehensive Guide</title><link href="https://rajansandha.github.io/how-to-blog/technology/design/how-to-create-avatars-online/" rel="alternate" type="text/html" title="How to Create Custom Avatars Online: A Comprehensive Guide" /><published>2023-03-20T00:00:00+00:00</published><updated>2023-03-20T00:00:00+00:00</updated><id>https://rajansandha.github.io/how-to-blog/technology/design/how-to-create-avatars-online</id><content type="html" xml:base="https://rajansandha.github.io/how-to-blog/technology/design/how-to-create-avatars-online/"><![CDATA[<h1 id="how-to-create-custom-avatars-online-a-comprehensive-guide">How to Create Custom Avatars Online: A Comprehensive Guide</h1>
+
+<p>Having a unique avatar for your online presence helps you stand out and create a consistent personal brand. In this guide, we’ll explore several methods to create custom avatars online using free and paid tools.</p>
+
+<h2 id="why-custom-avatars-matter">Why Custom Avatars Matter</h2>
+
+<p>A custom avatar:</p>
+<ul>
+  <li>Creates a consistent brand across platforms</li>
+  <li>Protects your privacy when you don’t want to use your real photo</li>
+  <li>Expresses your personality or interests</li>
+  <li>Makes your profiles more memorable</li>
+</ul>
+
+<h2 id="method-1-using-ai-powered-avatar-generators">Method 1: Using AI-Powered Avatar Generators</h2>
+
+<p>AI-powered tools can create realistic or stylized avatars from your photos or descriptions.</p>
+
+<h3 id="step-1-choose-an-ai-avatar-generator">Step 1: Choose an AI Avatar Generator</h3>
+
+<p>Here are some popular options:</p>
+
+<ul>
+  <li><strong>DALL-E Mini/Craiyon</strong>: Free text-to-image generator</li>
+  <li><strong>Midjourney</strong>: High-quality image generation (paid service)</li>
+  <li><strong>Avataaars Generator</strong>: Customizable illustrated avatars</li>
+  <li><strong>Ready Player Me</strong>: 3D avatars for gaming and social platforms</li>
+</ul>
+
+<h3 id="step-2-generate-your-avatar">Step 2: Generate Your Avatar</h3>
+
+<p>If using a text-based tool like DALL-E or Midjourney:</p>
+
+<ol>
+  <li>Visit the service’s website and create an account</li>
+  <li>Enter a detailed prompt like: “create a professional cartoon avatar of a person with short dark hair, glasses, and a blue background”</li>
+  <li>Wait for the AI to generate options</li>
+  <li>Select and download your favorite result</li>
+</ol>
+
+<p>For customizable tools like Avataaars:</p>
+
+<ol>
+  <li>Visit the website</li>
+  <li>Use the interface to select features (hair, eyes, clothing, etc.)</li>
+  <li>Customize colors and styles</li>
+  <li>Download the finished avatar</li>
+</ol>
+
+<h3 id="step-3-refine-your-avatar">Step 3: Refine Your Avatar</h3>
+
+<p>Most generated avatars benefit from some refinement:</p>
+
+<ol>
+  <li>Crop to a square format (most platforms display avatars as circles)</li>
+  <li>Adjust brightness and contrast if needed</li>
+  <li>Ensure the avatar looks good at different sizes</li>
+</ol>
+
+<h2 id="method-2-using-avatar-maker-apps">Method 2: Using Avatar Maker Apps</h2>
+
+<p>Dedicated avatar maker apps offer more control over the design process.</p>
+
+<h3 id="step-1-choose-an-avatar-maker-app">Step 1: Choose an Avatar Maker App</h3>
+
+<p>Some popular options include:</p>
+
+<ul>
+  <li><strong>Bitmoji</strong>: Personalized emoji-style avatars</li>
+  <li><strong>Picrew</strong>: Japanese avatar maker with many style options</li>
+  <li><strong>Avatar Maker</strong>: Android/iOS app for cartoon avatars</li>
+  <li><strong>Mirror AI</strong>: Creates avatars based on your selfies</li>
+</ul>
+
+<h3 id="step-2-create-your-avatar">Step 2: Create Your Avatar</h3>
+
+<p>Using Bitmoji as an example:</p>
+
+<ol>
+  <li>Download the Bitmoji app (iOS/Android) or install the browser extension</li>
+  <li>Create an account or log in with Snapchat</li>
+  <li>Choose a selfie or manually customize your avatar</li>
+  <li>Select features that resemble you (or your desired look)</li>
+  <li>Customize clothing and accessories</li>
+  <li>Save your finished avatar</li>
+</ol>
+
+<h3 id="step-3-export-and-use-your-avatar">Step 3: Export and Use Your Avatar</h3>
+
+<ol>
+  <li>Most apps allow you to save your avatar to your device</li>
+  <li>Some integrate directly with messaging apps or social media</li>
+  <li>For standalone use, export the highest resolution version available</li>
+</ol>
+
+<h2 id="method-3-designing-your-own-avatar-with-graphics-software">Method 3: Designing Your Own Avatar with Graphics Software</h2>
+
+<p>For those with design skills, creating a custom avatar from scratch offers maximum creative control.</p>
+
+<h3 id="step-1-choose-your-software">Step 1: Choose Your Software</h3>
+
+<p>Options include:</p>
+
+<ul>
+  <li><strong>Adobe Illustrator</strong>: Professional vector graphics software (paid)</li>
+  <li><strong>Inkscape</strong>: Free open-source vector graphics software</li>
+  <li><strong>Procreate</strong>: Digital painting app for iPad (paid)</li>
+  <li><strong>GIMP</strong>: Free photo editing software</li>
+</ul>
+
+<h3 id="step-2-create-your-avatar-1">Step 2: Create Your Avatar</h3>
+
+<p>Basic process:</p>
+
+<ol>
+  <li>Create a new document (recommended size: 1000×1000 pixels)</li>
+  <li>Sketch the basic shape and features</li>
+  <li>Add colors and details</li>
+  <li>Refine the design</li>
+  <li>Export as PNG with transparency</li>
+</ol>
+
+<h3 id="step-3-optimize-for-different-platforms">Step 3: Optimize for Different Platforms</h3>
+
+<p>Different platforms have different requirements:</p>
+
+<ul>
+  <li><strong>Twitter</strong>: 400×400 pixels minimum</li>
+  <li><strong>Instagram</strong>: 320×320 pixels minimum</li>
+  <li><strong>LinkedIn</strong>: 400×400 pixels minimum</li>
+  <li><strong>Discord</strong>: 128×128 pixels minimum</li>
+</ul>
+
+<h2 id="best-practices-for-avatar-design">Best Practices for Avatar Design</h2>
+
+<p>Regardless of your chosen method:</p>
+
+<ol>
+  <li><strong>Keep it simple</strong>: Avatars are often displayed small, so details can get lost</li>
+  <li><strong>Use contrasting colors</strong>: Helps your avatar stand out</li>
+  <li><strong>Consider the platform</strong>: Professional platforms like LinkedIn may call for more formal avatars</li>
+  <li><strong>Be consistent</strong>: Use the same or similar avatars across platforms for brand recognition</li>
+  <li><strong>Update occasionally</strong>: Refresh your avatar periodically to keep your online presence current</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Creating a custom avatar is a simple yet effective way to enhance your online presence. Whether you use AI-powered tools, avatar makers, or design your own, a unique avatar helps you stand out and create a memorable personal brand.</p>
+
+<p>Try different methods to see which style best represents you or your brand, and don’t be afraid to experiment with different designs for different platforms or purposes.</p>]]></content><author><name>How-To Team</name></author><category term="technology" /><category term="design" /><category term="avatars" /><category term="design" /><category term="profile-picture" /><category term="online-tools" /><summary type="html"><![CDATA[Learn how to create stunning custom avatars for your social media profiles and online presence]]></summary></entry><entry><title type="html">How to Build Your First AI Agent with Python</title><link href="https://rajansandha.github.io/how-to-blog/ai/programming/how-to-build-ai-agent/" rel="alternate" type="text/html" title="How to Build Your First AI Agent with Python" /><published>2023-03-15T00:00:00+00:00</published><updated>2023-03-15T00:00:00+00:00</updated><id>https://rajansandha.github.io/how-to-blog/ai/programming/how-to-build-ai-agent</id><content type="html" xml:base="https://rajansandha.github.io/how-to-blog/ai/programming/how-to-build-ai-agent/"><![CDATA[<h1 id="how-to-build-your-first-ai-agent-with-python">How to Build Your First AI Agent with Python</h1>
+
+<p>AI agents are software programs designed to perform tasks autonomously based on predefined rules or learned behaviors. In this guide, you’ll learn how to create a simple AI agent using Python.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Before you begin, make sure you have:</p>
+
+<ul>
+  <li>Python 3.8 or newer installed</li>
+  <li>Basic knowledge of Python programming</li>
+  <li>A code editor (like VS Code, PyCharm, etc.)</li>
+  <li>Understanding of basic AI concepts (helpful but not required)</li>
+</ul>
+
+<h2 id="step-1-set-up-your-environment">Step 1: Set Up Your Environment</h2>
+
+<p>First, let’s create a virtual environment and install the necessary packages:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new directory for your project</span>
+<span class="nb">mkdir </span>my-ai-agent
+<span class="nb">cd </span>my-ai-agent
+
+<span class="c"># Create a virtual environment</span>
+python <span class="nt">-m</span> venv venv
+
+<span class="c"># Activate the environment</span>
+<span class="c"># On Windows:</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate
+<span class="c"># On macOS/Linux:</span>
+<span class="nb">source </span>venv/bin/activate
+
+<span class="c"># Install required packages</span>
+pip <span class="nb">install </span>numpy openai gymnasium
+</code></pre></div></div>
+
+<h2 id="step-2-define-your-agents-structure">Step 2: Define Your Agent’s Structure</h2>
+
+<p>Create a new Python file called <code class="language-plaintext highlighter-rouge">agent.py</code> with the following code:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AIAgent</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">memory</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="nf">observe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observation</span><span class="p">):</span>
+        <span class="s">"""Process an observation from the environment"""</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> observes: </span><span class="si">{</span><span class="n">observation</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">memory</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">observation</span>
+    
+    <span class="k">def</span> <span class="nf">think</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observation</span><span class="p">):</span>
+        <span class="s">"""Make a decision based on observations"""</span>
+        <span class="c1"># Simple logic for now
+</span>        <span class="k">return</span> <span class="sa">f</span><span class="s">"I've observed </span><span class="si">{</span><span class="n">observation</span><span class="si">}</span><span class="s"> and I'm thinking about it."</span>
+    
+    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">decision</span><span class="p">):</span>
+        <span class="s">"""Take action based on a decision"""</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> acts: </span><span class="si">{</span><span class="n">decision</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">decision</span>
+    
+    <span class="k">def</span> <span class="nf">learn</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observation</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">):</span>
+        <span class="s">"""Learn from previous actions and their outcomes"""</span>
+        <span class="n">entry</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s">"observation"</span><span class="p">:</span> <span class="n">observation</span><span class="p">,</span>
+            <span class="s">"action"</span><span class="p">:</span> <span class="n">action</span><span class="p">,</span>
+            <span class="s">"reward"</span><span class="p">:</span> <span class="n">reward</span>
+        <span class="p">}</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">memory</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">entry</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">name</span><span class="si">}</span><span class="s"> learned from action with reward: </span><span class="si">{</span><span class="n">reward</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="step-3-create-a-simple-environment">Step 3: Create a Simple Environment</h2>
+
+<p>Create a file called <code class="language-plaintext highlighter-rouge">environment.py</code>:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">SimpleEnvironment</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">"initial"</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">steps</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">max_steps</span> <span class="o">=</span> <span class="mi">10</span>
+        
+    <span class="k">def</span> <span class="nf">get_observation</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">"""Return current state as observation"""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s">"Environment is in state: </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">state</span><span class="si">}</span><span class="s"> (step </span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">steps</span><span class="si">}</span><span class="s">/</span><span class="si">{</span><span class="bp">self</span><span class="p">.</span><span class="n">max_steps</span><span class="si">}</span><span class="s">)"</span>
+    
+    <span class="k">def</span> <span class="nf">take_action</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">action</span><span class="p">):</span>
+        <span class="s">"""Process agent's action and return reward"""</span>
+        <span class="bp">self</span><span class="p">.</span><span class="n">steps</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+        <span class="c1"># Simple logic for state transitions and rewards
+</span>        <span class="k">if</span> <span class="s">"explore"</span> <span class="ow">in</span> <span class="n">action</span><span class="p">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">"explored"</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">elif</span> <span class="s">"wait"</span> <span class="ow">in</span> <span class="n">action</span><span class="p">.</span><span class="n">lower</span><span class="p">():</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">"waiting"</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="p">.</span><span class="n">state</span> <span class="o">=</span> <span class="s">"unknown"</span>
+            <span class="n">reward</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+            
+        <span class="n">done</span> <span class="o">=</span> <span class="bp">self</span><span class="p">.</span><span class="n">steps</span> <span class="o">&gt;=</span> <span class="bp">self</span><span class="p">.</span><span class="n">max_steps</span>
+        
+        <span class="k">return</span> <span class="n">reward</span><span class="p">,</span> <span class="bp">self</span><span class="p">.</span><span class="n">get_observation</span><span class="p">(),</span> <span class="n">done</span>
+</code></pre></div></div>
+
+<h2 id="step-4-create-the-main-program">Step 4: Create the Main Program</h2>
+
+<p>Now, create <code class="language-plaintext highlighter-rouge">main.py</code> to run your agent:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">agent</span> <span class="kn">import</span> <span class="n">AIAgent</span>
+<span class="kn">from</span> <span class="nn">environment</span> <span class="kn">import</span> <span class="n">SimpleEnvironment</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Create agent and environment
+</span>    <span class="n">agent</span> <span class="o">=</span> <span class="n">AIAgent</span><span class="p">(</span><span class="s">"MyFirstAgent"</span><span class="p">)</span>
+    <span class="n">env</span> <span class="o">=</span> <span class="n">SimpleEnvironment</span><span class="p">()</span>
+    
+    <span class="c1"># Run a simple loop
+</span>    <span class="n">done</span> <span class="o">=</span> <span class="bp">False</span>
+    <span class="n">total_reward</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="c1"># Get initial observation
+</span>    <span class="n">observation</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">get_observation</span><span class="p">()</span>
+    
+    <span class="k">while</span> <span class="ow">not</span> <span class="n">done</span><span class="p">:</span>
+        <span class="c1"># Agent observes environment
+</span>        <span class="n">processed_obs</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="n">observe</span><span class="p">(</span><span class="n">observation</span><span class="p">)</span>
+        
+        <span class="c1"># Agent thinks and decides on action
+</span>        <span class="n">decision</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="n">think</span><span class="p">(</span><span class="n">processed_obs</span><span class="p">)</span>
+        
+        <span class="c1"># Agent acts
+</span>        <span class="n">action</span> <span class="o">=</span> <span class="n">agent</span><span class="p">.</span><span class="n">act</span><span class="p">(</span><span class="n">decision</span><span class="p">)</span>
+        
+        <span class="c1"># Environment processes action
+</span>        <span class="n">reward</span><span class="p">,</span> <span class="n">new_observation</span><span class="p">,</span> <span class="n">done</span> <span class="o">=</span> <span class="n">env</span><span class="p">.</span><span class="n">take_action</span><span class="p">(</span><span class="n">action</span><span class="p">)</span>
+        
+        <span class="c1"># Agent learns from outcome
+</span>        <span class="n">agent</span><span class="p">.</span><span class="n">learn</span><span class="p">(</span><span class="n">observation</span><span class="p">,</span> <span class="n">action</span><span class="p">,</span> <span class="n">reward</span><span class="p">)</span>
+        
+        <span class="c1"># Update for next iteration
+</span>        <span class="n">observation</span> <span class="o">=</span> <span class="n">new_observation</span>
+        <span class="n">total_reward</span> <span class="o">+=</span> <span class="n">reward</span>
+        
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Step completed, reward: </span><span class="si">{</span><span class="n">reward</span><span class="si">}</span><span class="s">, total: </span><span class="si">{</span><span class="n">total_reward</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">"-"</span> <span class="o">*</span> <span class="mi">50</span><span class="p">)</span>
+    
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Simulation complete. Total reward: </span><span class="si">{</span><span class="n">total_reward</span><span class="si">}</span><span class="s">"</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">"__main__"</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</code></pre></div></div>
+
+<h2 id="step-5-run-your-ai-agent">Step 5: Run Your AI Agent</h2>
+
+<p>Run your program from the command line:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python main.py
+</code></pre></div></div>
+
+<p>You should see output showing your agent making observations, thinking, acting, and learning from the environment.</p>
+
+<h2 id="expanding-your-agent">Expanding Your Agent</h2>
+
+<p>This is just a simple starting point. Here are ways to enhance your agent:</p>
+
+<ol>
+  <li><strong>Add Machine Learning</strong>: Implement Q-learning or other reinforcement learning algorithms</li>
+  <li><strong>Improve Decision Making</strong>: Use neural networks for more complex decision processes</li>
+  <li><strong>Connect to Real APIs</strong>: Let your agent interact with real-world data</li>
+  <li><strong>Add Natural Language Processing</strong>: Enable your agent to understand and generate text</li>
+</ol>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Congratulations! You’ve built a simple AI agent that can observe its environment, make decisions, take actions, and learn from outcomes. This foundation can be expanded to create more sophisticated agents for various applications.</p>
+
+<p>In future tutorials, we’ll explore how to add machine learning capabilities to make your agent truly intelligent and adaptable.</p>]]></content><author><name>How-To Team</name></author><category term="ai" /><category term="programming" /><category term="python" /><category term="ai" /><category term="machine-learning" /><category term="tutorial" /><summary type="html"><![CDATA[A step-by-step guide to building a simple AI agent using Python and open-source libraries]]></summary></entry></feed>
