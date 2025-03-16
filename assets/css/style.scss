@@ -17,6 +17,13 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
+  
+  // When ads are disabled
+  &.no-ads {
+    .wrapper {
+      max-width: 1000px;
+    }
+  }
 }
 
 // Increase the content width

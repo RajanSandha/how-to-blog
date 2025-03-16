@@ -32,14 +32,16 @@
         </nav>
       </div><!-- end header -->
 
-    <div class="page-container">
+    <div class="page-container{% unless site.show_ads %} no-ads{% endunless %}">
+      {% if site.show_ads %}
       <!-- Left sidebar for banner ads -->
       <div class="banner-left">
         <div class="ad-container">
           <!-- Banner Ad Space -->
-          <div class="banner-ad">Ad Space</div>
+          <div class="banner-ad">{{ site.left_ad_content | default: "Ad Space" }}</div>
         </div>
       </div>
+      {% endif %}
       
       <div class="wrapper">
         <section>
@@ -58,13 +60,15 @@
         </section>
       </div>
       
+      {% if site.show_ads %}
       <!-- Right sidebar for banner ads -->
       <div class="banner-right">
         <div class="ad-container">
           <!-- Banner Ad Space -->
-          <div class="banner-ad">Ad Space</div>
+          <div class="banner-ad">{{ site.right_ad_content | default: "Ad Space" }}</div>
         </div>
       </div>
+      {% endif %}
     </div>
 
     <footer>

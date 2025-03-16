@@ -5,6 +5,12 @@ google_analytics:
 theme: jekyll-theme-midnight
 permalink: /:categories/:title/
 timezone: UTC
+
+# Ad settings - disabled by default
+show_ads: false
+left_ad_content: "Ad Space"
+right_ad_content: "Ad Space"
+
 collections:
   category:
     output: true
