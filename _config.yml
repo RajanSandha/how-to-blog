@@ -1,46 +1,48 @@
+---
 title: How-To Guide
-description: Easy-to-follow guides and tutorials for everyday tasks and technical projects
+description: Easy-to-follow guides and tutorials for everyday tasks and technical
+  projects
 show_downloads: false
 google_analytics:
 theme: jekyll-theme-midnight
-permalink: /:categories/:title/
+permalink: "/:categories/:title/"
 timezone: UTC
 baseurl: "/how-to-blog"
 url: "https://rajansandha.github.io"
-
-# Repository info (required for GitHub Pages)
 repository: RajanSandha/how-to-blog
 github:
-  is_project_page: false
+  is_project_page: true
   is_user_page: false
-
-# Disable GitHub Metadata API calls to avoid authentication errors
+  repository_url: https://github.com/RajanSandha/how-to-blog
 github_metadata:
   disable: true
-
-# Ad settings - disabled by default, enable in production with the env var
-# Set the JEKYLL_SHOW_ADS=true environment variable in GitHub Actions
 show_ads: false
-left_ad_content: "Ad Space"
-right_ad_content: "Ad Space"
-
-# Jekyll build settings
+left_ad_content: Ad Space
+right_ad_content: Ad Space
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor
-  - .sass-cache
-  - _site
-  - .jekyll-cache
-
+- Gemfile
+- Gemfile.lock
+- node_modules
+- vendor
+- ".sass-cache"
+- _site
+- ".jekyll-cache"
+- netlify.toml
+- "*.log"
 collections:
   category:
     output: true
 defaults:
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "post"
-      author: "How-To Team"
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    author: How-To Team
+- scope:
+    path: ''
+  values:
+    layout: default
+plugins:
+- jekyll-seo-tag
+- jekyll-feed

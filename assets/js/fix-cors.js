@@ -4,19 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Function to check if stylesheets loaded properly
   function checkStylesheets() {
-    const cssFiles = [
-      '/assets/css/base.css',
-      '/assets/css/direct.css',
-      '/assets/css/style.css',
-      '/assets/css/custom.css'
-    ];
-    
     // Get the base URL from meta tag
     const baseUrl = document.querySelector('meta[name="base-url"]')?.content || '';
     
+    const cssFiles = [
+      baseUrl + '/assets/css/base.css',
+      baseUrl + '/assets/css/direct.css',
+      baseUrl + '/assets/css/style.css',
+      baseUrl + '/assets/css/custom.css'
+    ];
+    
     // Check each CSS file
     cssFiles.forEach(file => {
-      const fullPath = baseUrl + file;
+      const fullPath = file;
       const link = document.createElement('link');
       link.setAttribute('rel', 'stylesheet');
       link.setAttribute('type', 'text/css');

@@ -2,20 +2,41 @@
 
 This toolkit provides a set of scripts to simplify the management of your Jekyll blog.
 
-## Prerequisites
+## 📋 Prerequisites
 
 - Ruby (2.6.0 or higher)
 - Jekyll and Bundler gems
 - Git
 - ImageMagick (for image processing)
 
-## Getting Started
+## 🚀 Getting Started
 
 1. Clone your blog repository
 2. Navigate to your blog directory
 3. Use the scripts in this toolkit to manage your blog
 
-## Available Scripts
+## 🌐 GitHub Pages Deployment
+
+This blog is configured to deploy to GitHub Pages automatically when changes are pushed to the `main` branch. The deployment process uses GitHub Actions workflows and creates a `gh-pages` branch with the built site.
+
+### How it works:
+
+1. Push changes to the `main` branch
+2. GitHub Actions workflow runs:
+   - Sets up Ruby environment
+   - Installs dependencies
+   - Builds the Jekyll site
+   - Deploys to the `gh-pages` branch
+3. GitHub Pages serves the content from the `gh-pages` branch
+
+### Troubleshooting Deployment:
+
+If your site is not showing up at the correct URL, check:
+- GitHub repository settings to ensure Pages is enabled
+- Actions tab to see if workflow completed successfully
+- Ensure the base URL and site URL settings are correct in `_config.yml`
+
+## 🛠️ Available Scripts
 
 ### 1. Publishing a New Post
 
@@ -93,14 +114,14 @@ The `process_env.rb` script is used primarily in the GitHub Actions workflow to 
 - `LEFT_AD_CONTENT`: HTML content for the left ad space
 - `RIGHT_AD_CONTENT`: HTML content for the right ad space
 
-## Image Resources
+## 🖼️ Image Resources
 
 The toolkit includes resources to help you with images:
 
 1. **Placeholder Images**: Use the SVG placeholder at `assets/images/placeholder.svg` for quick mockups
 2. **Image Generator**: Open `assets/images/placeholder.html` in your browser to generate custom placeholder images
 
-## Advanced Configuration
+## ⚙️ Advanced Configuration
 
 ### Custom Styling
 
@@ -113,7 +134,7 @@ Ads are disabled by default. To enable them in production:
 1. Set the `JEKYLL_SHOW_ADS` environment variable to 'true' in your GitHub Actions workflow
 2. Customize the ad content using the `LEFT_AD_CONTENT` and `RIGHT_AD_CONTENT` environment variables
 
-## Troubleshooting
+## 🔍 Troubleshooting
 
 If you encounter issues:
 
@@ -121,10 +142,10 @@ If you encounter issues:
 2. Verify that you have the required dependencies installed
 3. Check the GitHub Actions workflow output for build errors
 
-## Contributing
+## 🤝 Contributing
 
 Feel free to enhance these scripts or add new ones to improve your Jekyll blogging experience.
 
-## License
+## 📜 License
 
 This toolkit is available under the MIT License. Feel free to use and modify it for your own projects.

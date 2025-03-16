@@ -10,25 +10,25 @@
     {% include fallback-styles.html %}
     
     <!-- Base CSS that works across browsers with no preprocessing -->
-    <link rel="stylesheet" href="{{ '/assets/css/base.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/base.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     
     <!-- Direct CSS file that doesn't require SCSS processing -->
-    <link rel="stylesheet" href="{{ '/assets/css/direct.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/direct.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     
     <!-- Standard theme styles -->
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.time | date: '%s' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/css/custom.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+    <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     
     <!-- Debug styles for development only -->
     {% if jekyll.environment == 'development' %}
-    <link rel="stylesheet" href="{{ '/assets/css/debug.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/debug.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% endif %}
     
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/fix-cors.js?v=' | append: site.time | date: '%s' | relative_url }}"></script>
-    <script src="{{ '/assets/js/inline-styles.js?v=' | append: site.time | date: '%s' | relative_url }}"></script>
+    <script src="{{ '/assets/js/fix-cors.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+    <script src="{{ '/assets/js/inline-styles.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
     
     <!-- Font Awesome from CDN with crossorigin attribute -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />

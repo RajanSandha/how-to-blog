@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'
+          bundler-cache: true
+      
+      - name: Install dependencies
+        run: bundle install
+      
+      - name: Process environment variables
+        run: ruby process_env.rb
+        env:
+          JEKYLL_SHOW_ADS: ${{ secrets.JEKYLL_SHOW_ADS || 'false' }}
+          LEFT_AD_CONTENT: ${{ secrets.LEFT_AD_CONTENT }}
+          RIGHT_AD_CONTENT: ${{ secrets.RIGHT_AD_CONTENT }}
+      
+      - name: Build site
+        run: |
+          JEKYLL_ENV=production bundle exec jekyll build
+        env:
+          PAGES_REPO_NWO: ${{ github.repository }}
+          DISABLE_GITHUB_API: 'true'
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          enable_jekyll: false
+          force_orphan: true  # Use a single branch for gh-pages deployments 
