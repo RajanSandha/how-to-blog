@@ -2,12 +2,11 @@
 
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.9.0"
-gem "jekyll-theme-midnight"
 gem "github-pages", group: :jekyll_plugins
+gem "jekyll-theme-midnight"
 gem "webrick", "~> 1.7"
 
 group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.12"
   gem "jekyll-seo-tag"
-  gem "jekyll-sitemap"
 end

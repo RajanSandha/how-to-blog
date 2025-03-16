@@ -15,13 +15,16 @@
 </script>
 {% endif %}
 
-<!-- Add custom fonts -->
+<!-- Add custom fonts - use preconnect for performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
 <!-- Add custom meta tags -->
 <meta name="author" content="{{ site.title }}">
 
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
+<!-- Set favicon -->
+<link rel="icon" type="image/svg+xml" href="{{ '/favicon.svg' | relative_url }}">
+<link rel="alternate icon" href="{{ '/favicon.ico' | relative_url }}">
 
 <!-- end custom head snippets -->

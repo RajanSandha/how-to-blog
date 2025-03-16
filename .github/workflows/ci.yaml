@@ -31,9 +31,21 @@ jobs:
           LEFT_AD_CONTENT: ${{ secrets.LEFT_AD_CONTENT }}
           RIGHT_AD_CONTENT: ${{ secrets.RIGHT_AD_CONTENT }}
       
+      - name: Check asset paths before build
+        run: |
+          echo "Checking for CSS files before build..."
+          find assets -name "*.css" || echo "No CSS files found in assets/"
+      
       - name: Build site
         run: bundle exec jekyll build --verbose
         env:
           JEKYLL_ENV: production
           PAGES_REPO_NWO: ${{ github.repository }}
           DISABLE_GITHUB_API: 'true'
+      
+      - name: Verify build output
+        run: |
+          echo "Checking build output..."
+          find _site -name "*.css" || echo "No CSS files found in _site/"
+          find _site/assets -name "*.css" || echo "No CSS files found in _site/assets/"
+          ls -la _site/assets/css/ || echo "CSS directory not found"

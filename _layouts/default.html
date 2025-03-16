@@ -1,15 +1,23 @@
 <!doctype html>
-<html lang="{{ site.lang | default: "en-US" }}">
+<html lang="{{ site.lang | default: "en-US" }}" class="{% if jekyll.environment == 'development' %}debug-active{% endif %}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 {% seo %}
+    <!-- Fallback inline styles in case external CSS fails to load -->
+    {% include fallback-styles.html %}
+    
+    <!-- Direct CSS file that doesn't require SCSS processing -->
+    <link rel="stylesheet" href="{{ '/assets/css/direct.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    <!-- Standard theme styles -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.time | date: '%s' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/debug.css?v=' | append: site.time | date: '%s' | relative_url }}">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Replace FontAwesome kit with CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -77,5 +85,15 @@
         <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
       </div>
     </footer>
+
+    {% if jekyll.environment == 'development' %}
+    <!-- Debug info in development mode -->
+    <div style="position:fixed; bottom:0; right:0; background:black; color:lime; padding:10px; font-family:monospace; z-index:9999;">
+      <p>Debug Mode Active</p>
+      <p>Base URL: {{ site.baseurl }}</p>
+      <p>URL: {{ site.url }}</p>
+      <p>Env: {{ jekyll.environment }}</p>
+    </div>
+    {% endif %}
   </body>
 </html>
