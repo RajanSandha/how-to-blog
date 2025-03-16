@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history for proper site building
       
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -22,7 +24,16 @@ jobs:
       - name: Install dependencies
         run: bundle install
       
+      - name: Process environment variables
+        run: ruby process_env.rb
+        env:
+          JEKYLL_SHOW_ADS: ${{ secrets.JEKYLL_SHOW_ADS || 'false' }}
+          LEFT_AD_CONTENT: ${{ secrets.LEFT_AD_CONTENT }}
+          RIGHT_AD_CONTENT: ${{ secrets.RIGHT_AD_CONTENT }}
+      
       - name: Build site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build --verbose
         env:
           JEKYLL_ENV: production
+          PAGES_REPO_NWO: ${{ github.repository }}
+          DISABLE_GITHUB_API: 'true'

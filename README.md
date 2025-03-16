@@ -1,116 +1,130 @@
-# The Midnight theme
+# Jekyll Blog Publishing Toolkit
 
-[![.github/workflows/ci.yaml](https://github.com/pages-themes/midnight/actions/workflows/ci.yaml/badge.svg)](https://github.com/pages-themes/midnight/actions/workflows/ci.yaml) [![Gem Version](https://badge.fury.io/rb/jekyll-theme-midnight.svg)](https://badge.fury.io/rb/jekyll-theme-midnight)
+This toolkit provides a set of scripts to simplify the management of your Jekyll blog.
 
-*Midnight is a Jekyll theme for GitHub Pages. You can [preview the theme to see what it looks like](http://pages-themes.github.io/midnight), or even [use it today](#usage).*
+## Prerequisites
 
-![Thumbnail of Midnight](thumbnail.png)
+- Ruby (2.6.0 or higher)
+- Jekyll and Bundler gems
+- Git
+- ImageMagick (for image processing)
 
-## Usage
+## Getting Started
 
-To use the Midnight theme:
+1. Clone your blog repository
+2. Navigate to your blog directory
+3. Use the scripts in this toolkit to manage your blog
 
-1. Add the following to your site's `_config.yml`:
+## Available Scripts
 
-    ```yml
-    remote_theme: pages-themes/midnight@v0.2.0
-    plugins:
-    - jekyll-remote-theme # add this line to the plugins list if you already have one
-    ```
+### 1. Publishing a New Post
 
-2. Optionally, if you'd like to preview your site on your computer, add the following to your site's `Gemfile`:
+Use the `publish_post.rb` script to create a new post with the proper front matter:
 
-    ```ruby
-    gem "github-pages", group: :jekyll_plugins
-    ```
-
-## Customizing
-
-### Configuration variables
-
-Midnight will respect the following variables, if set in your site's `_config.yml`:
-
-```yml
-title: [The title of your site]
-description: [A short description of your site's purpose]
+```bash
+./publish_post.rb "Your Post Title" [category]
 ```
 
-Additionally, you may choose to set the following optional variables:
+Arguments:
+- `"Your Post Title"`: The title of your post (required)
+- `category`: The category for your post (optional, defaults to "general")
 
-```yml
-show_downloads: ["true" or "false" (unquoted) to indicate whether to provide a download URL]
-google_analytics: [Your Google Analytics tracking ID]
+This will create a new file in the `_posts` directory with the correct date and slug format.
+
+### 2. Processing Images
+
+Use the `process_images.rb` script to optimize images for your blog:
+
+```bash
+./process_images.rb path/to/image.jpg [width]
 ```
 
-### Stylesheet
+Arguments:
+- `path/to/image.jpg`: Path to the image you want to process (required)
+- `width`: Target width in pixels for the thumbnail (optional, defaults to 800)
 
-If you'd like to add your own custom styles:
+This script will:
+1. Copy the original image to the `assets/images` directory
+2. Create an optimized thumbnail version
+3. Output Markdown code for including the images in your posts
 
-1. Create a file called `/assets/css/style.scss` in your site
-2. Add the following content to the top of the file, exactly as shown:
-    ```scss
-    ---
-    ---
+Requirements: ImageMagick must be installed on your system.
 
-    @import "{{ site.theme }}";
-    ```
-3. Add any custom CSS (or Sass, including imports) you'd like immediately after the `@import` line
+### 3. Syncing with GitHub
 
-*Note: If you'd like to change the theme's Sass variables, you must set new values before the `@import` line in your stylesheet.*
+Use the `sync.sh` script to synchronize your changes with GitHub:
 
-### Layouts
+```bash
+./sync.sh "Commit message"
+```
 
-If you'd like to change the theme's HTML layout:
+Arguments:
+- `"Commit message"`: A descriptive message for your commit (required)
 
-1. For some changes such as a custom `favicon`, you can add custom files in your local `_includes` folder. The files [provided with the theme](https://github.com/pages-themes/midnight/tree/master/_includes) provide a starting point and are included by the [original layout template](https://github.com/pages-themes/midnight/blob/master/_layouts/default.html).
-2. For more extensive changes, [copy the original template](https://github.com/pages-themes/midnight/blob/master/_layouts/default.html) from the theme's repository<br />(*Pro-tip: click "raw" to make copying easier*)
-3. Create a file called `/_layouts/default.html` in your site
-4. Paste the default layout content copied in the first step
-5. Customize the layout as you'd like
+This script will:
+1. Pull the latest changes from your remote repository
+2. Add all your local changes
+3. Commit the changes with your provided message
+4. Push the changes to GitHub
 
-### Customizing Google Analytics code
+### 4. Deploying to GitHub Pages
 
-Google has released several iterations to their Google Analytics code over the years since this theme was first created. If you would like to take advantage of the latest code, paste it into `_includes/head-custom-google-analytics.html` in your Jekyll site.
+Use the `deploy.sh` script to build and deploy your blog to GitHub Pages:
 
-### Overriding GitHub-generated URLs
+```bash
+./deploy.sh ["Commit message"]
+```
 
-Templates often rely on URLs supplied by GitHub such as links to your repository or links to download your project. If you'd like to override one or more default URLs:
+Arguments:
+- `"Commit message"`: A descriptive message for your commit (optional, defaults to "Update blog content")
 
-1. Look at [the template source](https://github.com/pages-themes/midnight/blob/master/_layouts/default.html) to determine the name of the variable. It will be in the form of `{{ site.github.zip_url }}`.
-2. Specify the URL that you'd like the template to use in your site's `_config.yml`. For example, if the variable was `site.github.url`, you'd add the following:
-    ```yml
-    github:
-      zip_url: http://example.com/download.zip
-      another_url: another value
-    ```
-3. When your site is built, Jekyll will use the URL you specified, rather than the default one provided by GitHub.
+This script will:
+1. Pull the latest changes from your remote repository
+2. Build the site with Jekyll in production mode
+3. Add all your local changes
+4. Commit the changes with your provided message
+5. Push the changes to GitHub Pages
 
-*Note: You must remove the `site.` prefix, and each variable name (after the `github.`) should be indent with two space below `github:`.*
+### 5. Environment Variable Processing
 
-For more information, see [the Jekyll variables documentation](https://jekyllrb.com/docs/variables/).
+The `process_env.rb` script is used primarily in the GitHub Actions workflow to configure your site based on environment variables:
 
-## Roadmap
+- `JEKYLL_SHOW_ADS`: Set to 'true' to enable ads
+- `LEFT_AD_CONTENT`: HTML content for the left ad space
+- `RIGHT_AD_CONTENT`: HTML content for the right ad space
 
-See the [open issues](https://github.com/pages-themes/midnight/issues) for a list of proposed features (and known issues).
+## Image Resources
 
-## Project philosophy
+The toolkit includes resources to help you with images:
 
-The Midnight theme is intended to make it quick and easy for GitHub Pages users to create their first (or 100th) website. The theme should meet the vast majority of users' needs out of the box, erring on the side of simplicity rather than flexibility, and provide users the opportunity to opt-in to additional complexity if they have specific needs or wish to further customize their experience (such as adding custom CSS or modifying the default layout). It should also look great, but that goes without saying.
+1. **Placeholder Images**: Use the SVG placeholder at `assets/images/placeholder.svg` for quick mockups
+2. **Image Generator**: Open `assets/images/placeholder.html` in your browser to generate custom placeholder images
+
+## Advanced Configuration
+
+### Custom Styling
+
+The site includes a custom CSS file at `assets/css/custom.css` where you can add your own styling without modifying the Jekyll theme files.
+
+### Ad Management
+
+Ads are disabled by default. To enable them in production:
+
+1. Set the `JEKYLL_SHOW_ADS` environment variable to 'true' in your GitHub Actions workflow
+2. Customize the ad content using the `LEFT_AD_CONTENT` and `RIGHT_AD_CONTENT` environment variables
+
+## Troubleshooting
+
+If you encounter issues:
+
+1. Make sure all scripts are executable (`chmod +x script_name.rb`)
+2. Verify that you have the required dependencies installed
+3. Check the GitHub Actions workflow output for build errors
 
 ## Contributing
 
-Interested in contributing to Midnight? We'd love your help. Midnight is an open source project, built one contribution at a time by users like you. See [the CONTRIBUTING file](docs/CONTRIBUTING.md) for instructions on how to contribute.
+Feel free to enhance these scripts or add new ones to improve your Jekyll blogging experience.
 
-### Previewing the theme locally
+## License
 
-If you'd like to preview the theme locally (for example, in the process of proposing a change):
-
-1. Clone down the theme's repository (`git clone https://github.com/pages-themes/midnight`)
-2. `cd` into the theme's directory
-3. Run `script/bootstrap` to install the necessary dependencies
-4. Run `bundle exec jekyll serve` to start the preview server
-5. Visit [`localhost:4000`](http://localhost:4000) in your browser to preview the theme
-
-### Running tests
-
-The theme contains a minimal test suite, to ensure a site with the theme would build successfully. To run the tests, simply run `script/cibuild`. You'll need to run `script/bootstrap` once before the test script will work.
+This toolkit is available under the MIT License. Feel free to use and modify it for your own projects.

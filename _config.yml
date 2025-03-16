@@ -6,10 +6,31 @@ theme: jekyll-theme-midnight
 permalink: /:categories/:title/
 timezone: UTC
 
-# Ad settings - disabled by default
+# Repository info (required for GitHub Pages)
+repository: RajanSandha/how-to-blog
+github:
+  is_project_page: false
+  is_user_page: false
+
+# Disable GitHub Metadata API calls to avoid authentication errors
+github_metadata:
+  disable: true
+
+# Ad settings - disabled by default, enable in production with the env var
+# Set the JEKYLL_SHOW_ADS=true environment variable in GitHub Actions
 show_ads: false
 left_ad_content: "Ad Space"
 right_ad_content: "Ad Space"
+
+# Jekyll build settings
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - _site
+  - .jekyll-cache
 
 collections:
   category:

@@ -1,0 +1,173 @@
+/* Custom styles for How-To Blog */
+body {
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: #f0e7d5;
+  background: linear-gradient(#2a2a29, #1c1c1c);
+}
+
+/* Page container for the three-column layout */
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* When ads are disabled */
+.page-container.no-ads .wrapper {
+  max-width: 1000px;
+}
+
+/* Increase the content width */
+.wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  max-width: 100%;
+}
+
+/* Banner ad areas */
+.banner-left, .banner-right {
+  width: 160px;
+  height: 600px;
+  margin-top: 70px;
+}
+
+.ad-container {
+  position: sticky;
+  top: 80px;
+}
+
+.banner-ad {
+  width: 160px;
+  height: 600px;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  border: 1px dashed #444;
+  border-radius: 5px;
+}
+
+/* Header and navigation */
+#header {
+  background: #111;
+  border-bottom: 4px solid #2c2c2c;
+}
+
+#header nav {
+  max-width: 1200px;
+  background: transparent;
+}
+
+#header nav ul li {
+  margin: 0 5px;
+}
+
+#header nav ul li a {
+  border: none;
+  background: none;
+  box-shadow: none;
+  color: #bbbbbb;
+  transition: all 0.3s ease;
+}
+
+#header nav ul li a:hover {
+  color: #ffcc00;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+#header nav ul li.site-title a {
+  color: #ffcc00;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Title style updates */
+#title {
+  margin-bottom: 30px;
+}
+
+#title h1 {
+  font-size: 36px;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #ffcc00;
+}
+
+#title p {
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px 0;
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+}
+
+/* Responsive styles */
+@media print, screen and (max-width: 1200px) {
+  .banner-left, .banner-right {
+    display: none;
+  }
+  
+  .page-container {
+    max-width: 800px;
+  }
+}
+
+@media print, screen and (max-width: 720px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+  
+  #header nav ul li a {
+    padding: 8px;
+    font-size: 12px;
+  }
+  
+  #header nav ul li.site-title a {
+    font-size: 16px;
+  }
+}
+
+@media print, screen and (max-width: 480px) {
+  #header {
+    height: auto;
+    position: relative;
+  }
+  
+  #header nav {
+    padding: 10px;
+  }
+  
+  #header nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #header nav ul li {
+    margin: 5px 0;
+  }
+  
+  #header nav ul li a {
+    display: block;
+    text-align: center;
+  }
+  
+  section {
+    margin-top: 20px;
+  }
+} 

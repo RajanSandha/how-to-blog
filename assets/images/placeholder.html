@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder Image Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .placeholder {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        label, input, button {
+            margin: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .download-link {
+            margin-top: 20px;
+        }
+        #generatedImage {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jekyll Blog Placeholder Image Generator</h1>
+        <p>Generate placeholder images for your Jekyll blog posts</p>
+        
+        <div class="controls">
+            <label for="width">Width:</label>
+            <input type="number" id="width" value="800" min="100" max="2000">
+            
+            <label for="height">Height:</label>
+            <input type="number" id="height" value="400" min="100" max="2000">
+            
+            <label for="bgColor">Background Color:</label>
+            <input type="color" id="bgColor" value="#f0f0f0">
+            
+            <label for="textColor">Text Color:</label>
+            <input type="color" id="textColor" value="#333333">
+            
+            <label for="text">Text:</label>
+            <input type="text" id="text" value="Jekyll Blog Image" style="width: 200px;">
+            
+            <br>
+            <button onclick="generateImage()">Generate Image</button>
+        </div>
+        
+        <div class="placeholder" id="imageContainer">
+            <canvas id="canvas" style="display: none;"></canvas>
+            <img id="generatedImage" alt="Placeholder Image">
+        </div>
+        
+        <div class="download-link" id="downloadContainer" style="display: none;">
+            <a id="downloadLink" download="placeholder.jpg">Download Image</a>
+        </div>
+    </div>
+
+    <script>
+        // Generate the initial image when the page loads
+        window.onload = function() {
+            generateImage();
+        };
+        
+        function generateImage() {
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+            const bgColor = document.getElementById('bgColor').value;
+            const textColor = document.getElementById('textColor').value;
+            const text = document.getElementById('text').value;
+            
+            const canvas = document.getElementById('canvas');
+            canvas.width = width;
+            canvas.height = height;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Draw background
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, width, height);
+            
+            // Draw border
+            ctx.strokeStyle = '#cccccc';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(0, 0, width, height);
+            
+            // Draw text
+            ctx.fillStyle = textColor;
+            ctx.font = Math.floor(width / 20) + 'px Arial';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(text, width / 2, height / 2);
+            
+            // Draw dimensions text
+            ctx.font = Math.floor(width / 40) + 'px Arial';
+            ctx.fillText(width + 'x' + height, width / 2, height * 0.8);
+            
+            // Update the image
+            const dataUrl = canvas.toDataURL('image/jpeg');
+            document.getElementById('generatedImage').src = dataUrl;
+            
+            // Update download link
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.href = dataUrl;
+            downloadLink.download = width + 'x' + height + '_placeholder.jpg';
+            document.getElementById('downloadContainer').style.display = 'block';
+        }
+    </script>
+</body>
+</html> 
