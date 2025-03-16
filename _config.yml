@@ -5,6 +5,8 @@ google_analytics:
 theme: jekyll-theme-midnight
 permalink: /:categories/:title/
 timezone: UTC
+baseurl: "/how-to-blog"
+url: "https://rajansandha.github.io"
 
 # Repository info (required for GitHub Pages)
 repository: RajanSandha/how-to-blog
