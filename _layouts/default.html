@@ -3,21 +3,36 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="base-url" content="{{ site.baseurl }}">
 
 {% seo %}
     <!-- Fallback inline styles in case external CSS fails to load -->
     {% include fallback-styles.html %}
     
+    <!-- Base CSS that works across browsers with no preprocessing -->
+    <link rel="stylesheet" href="{{ '/assets/css/base.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    
     <!-- Direct CSS file that doesn't require SCSS processing -->
     <link rel="stylesheet" href="{{ '/assets/css/direct.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    
     <!-- Standard theme styles -->
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.time | date: '%s' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    
+    <!-- Debug styles for development only -->
+    {% if jekyll.environment == 'development' %}
     <link rel="stylesheet" href="{{ '/assets/css/debug.css?v=' | append: site.time | date: '%s' | relative_url }}">
+    {% endif %}
+    
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
-    <!-- Replace FontAwesome kit with CDN link -->
+    <script src="{{ '/assets/js/fix-cors.js?v=' | append: site.time | date: '%s' | relative_url }}"></script>
+    <script src="{{ '/assets/js/inline-styles.js?v=' | append: site.time | date: '%s' | relative_url }}"></script>
+    
+    <!-- Font Awesome from CDN with crossorigin attribute -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -25,7 +40,17 @@
     <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <!-- Custom head includes -->
     {% include head-custom.html %}
+    
+    <!-- Critical inline CSS - absolute minimum styles -->
+    <style>
+      body {background-color: #252525; color: #f0e7d5;}
+      #header {background-color: #111; border-bottom: 4px solid #2c2c2c;}
+      a {color: #ffcc00;}
+      h1 {color: #ffcc00;}
+    </style>
   </head>
   <body>
       <div id="header">
@@ -93,7 +118,22 @@
       <p>Base URL: {{ site.baseurl }}</p>
       <p>URL: {{ site.url }}</p>
       <p>Env: {{ jekyll.environment }}</p>
+      <p>CSS: Base ({{ '/assets/css/base.css' | relative_url }})</p>
     </div>
     {% endif %}
+
+    <!-- Browser console debug information -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        console.log('Debug: Page loaded');
+        console.log('Base URL:', '{{ site.baseurl }}');
+        console.log('Full URL:', '{{ site.url }}{{ site.baseurl }}');
+        console.log('Environment:', '{{ jekyll.environment }}');
+        
+        // Check if CSS files are loaded
+        const styleSheets = Array.from(document.styleSheets);
+        console.log('Loaded StyleSheets:', styleSheets.map(s => s.href));
+      });
+    </script>
   </body>
 </html>

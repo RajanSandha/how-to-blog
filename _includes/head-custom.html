@@ -3,6 +3,16 @@
 <!-- Setup theme-color -->
 {% include head-custom-theme-colors.html %}
 
+<!-- Add CORS headers -->
+<meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+<meta http-equiv="Cross-Origin-Resource-Policy" content="same-origin">
+<meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+
+<!-- Preload critical CSS files -->
+<link rel="preload" href="{{ '/assets/css/direct.css' | relative_url }}" as="style">
+<link rel="preload" href="{{ '/assets/css/style.css' | relative_url }}" as="style">
+<link rel="preload" href="{{ '/assets/css/custom.css' | relative_url }}" as="style">
+
 <!-- Setup Google Analytics -->
 {% if site.google_analytics %}
 <script>
