@@ -1,6 +1,76 @@
 ---
 layout: default
+title: How-To Guide - Step-by-Step Tutorials and Guides
+description: Easy-to-follow guides and tutorials for technology, programming, AI, and more
 ---
+
+# Welcome to How-To Guide
+
+Your source for practical, step-by-step tutorials to help you learn new skills and solve common problems.
+
+## Featured How-To Guides
+
+<div class="featured-posts">
+  {% for post in site.posts limit:3 %}
+    <article class="post">
+      <h2 class="post-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <div class="post-meta">
+        <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span>
+        {% if post.categories %}
+          • 
+          <span class="post-categories">
+            {% for category in post.categories %}
+              <a href="{{ site.baseurl }}/categories/{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+          </span>
+        {% endif %}
+      </div>
+      <div class="post-excerpt">
+        {{ post.excerpt }}
+      </div>
+      <a href="{{ post.url | relative_url }}" class="read-more">Read the full guide &raquo;</a>
+    </article>
+  {% endfor %}
+</div>
+
+## Browse by Category
+
+<div class="category-list">
+  <div class="category">
+    <h3><a href="{{ site.baseurl }}/categories/technology">Technology</a></h3>
+    <p>Guides for everyday technology challenges and solutions</p>
+  </div>
+  
+  <div class="category">
+    <h3><a href="{{ site.baseurl }}/categories/ai">Artificial Intelligence</a></h3>
+    <p>Learn how to build and use AI tools and applications</p>
+  </div>
+  
+  <div class="category">
+    <h3><a href="{{ site.baseurl }}/categories/programming">Programming</a></h3>
+    <p>Coding tutorials and development guides</p>
+  </div>
+  
+  <div class="category">
+    <h3><a href="{{ site.baseurl }}/categories/design">Design</a></h3>
+    <p>Tips and tricks for better digital design</p>
+  </div>
+</div>
+
+## Why Choose Our How-To Guides?
+
+* **Clear and Concise** - We break down complex topics into simple, actionable steps
+* **Practical Examples** - Real-world examples you can follow along with
+* **Up-to-Date Information** - Our guides are regularly updated to stay current
+* **Community Support** - Join our community to get help and share your experiences
+
+## Get Started
+
+Looking for something specific? Browse our [categories]({{ site.baseurl }}/categories) or use the navigation bar above to find guides on your topic of interest.
+
+New guides are added regularly, so be sure to check back often or subscribe to our newsletter to stay updated on the latest how-to content.
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -21,31 +22,55 @@
       <div id="header">
         <nav>
           <ul>
-            <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
-            {% if site.show_downloads %}
-              <li class="downloads"><a href="{{ site.github.zip_url }}">ZIP</a></li>
-              <li class="downloads"><a href="{{ site.github.tar_url }}">TAR</a></li>
-              <li class="title">DOWNLOADS</li>
-            {% endif %}
+            <li class="site-title"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></li>
+            <li><a href="{{ '/categories/technology' | relative_url }}">Technology</a></li>
+            <li><a href="{{ '/categories/programming' | relative_url }}">Programming</a></li>
+            <li><a href="{{ '/categories/ai' | relative_url }}">AI</a></li>
+            <li><a href="{{ '/categories/tools' | relative_url }}">Tools</a></li>
+            <li><a href="{{ '/about' | relative_url }}">About</a></li>
           </ul>
         </nav>
       </div><!-- end header -->
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-          <p>{{ site.description | default: site.github.project_tagline }}</p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/mattgraham">mattgraham</a></span>
+    <div class="page-container">
+      <!-- Left sidebar for banner ads -->
+      <div class="banner-left">
+        <div class="ad-container">
+          <!-- Banner Ad Space -->
+          <div class="banner-ad">Ad Space</div>
         </div>
+      </div>
+      
+      <div class="wrapper">
+        <section>
+          <div id="title">
+            <h1>{{ page.title | default: site.title }}</h1>
+            {% if page.description %}
+              <p>{{ page.description }}</p>
+            {% elsif site.description %}  
+              <p>{{ site.description }}</p>
+            {% endif %}
+            <hr>
+          </div>
 
-        {{ content }}
+          {{ content }}
 
-      </section>
-
+        </section>
+      </div>
+      
+      <!-- Right sidebar for banner ads -->
+      <div class="banner-right">
+        <div class="ad-container">
+          <!-- Banner Ad Space -->
+          <div class="banner-ad">Ad Space</div>
+        </div>
+      </div>
     </div>
+
+    <footer>
+      <div class="wrapper">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

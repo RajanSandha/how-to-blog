@@ -1,5 +1,17 @@
-title: Midnight theme
-description: Midnight is a theme for GitHub Pages.
-show_downloads: true
+title: How-To Guide
+description: Easy-to-follow guides and tutorials for everyday tasks and technical projects
+show_downloads: false
 google_analytics:
 theme: jekyll-theme-midnight
+permalink: /:categories/:title/
+timezone: UTC
+collections:
+  category:
+    output: true
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "How-To Team"
